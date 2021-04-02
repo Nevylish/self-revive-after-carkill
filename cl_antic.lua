@@ -10,8 +10,7 @@ function verif(a, val)
 end
 
 RegisterCommand('carkill', function()
-local ped = GetPlayerPed(-1)
-local cd = GetPedCauseOfDeath(ped)
+local cd = GetPedCauseOfDeath(GetPlayerPed(-1))
     if verif(carkill, cd) then
         TriggerEvent('esx_ambulancejob:revive')
         TriggerEvent('esx:showNotification', '~g~Vous avez été réanimé suite à une mort causé par un véhicule.')
