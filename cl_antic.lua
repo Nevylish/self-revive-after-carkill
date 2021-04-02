@@ -1,7 +1,7 @@
 local carkill = { 133987706, -1553120962 }
 
 function verif(a, val)
-  for _, value in ipairs(a) do
+  for value in ipairs(a) do
     if value == val then
       return true 
       end
