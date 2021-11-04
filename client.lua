@@ -1,8 +1,8 @@
 local carkill = { 133987706, -1553120962 }
 
-function verif(a, val)
+function checkCauseOfDeath(a, b)
   for value in ipairs(a) do
-    if value == val then
+    if value == b then
       return true 
       end
     end
@@ -10,8 +10,7 @@ function verif(a, val)
 end
 
 RegisterCommand('carkill', function()
-local cd = GetPedCauseOfDeath(GetPlayerPed(-1))
-    if verif(carkill, cd) then
+    if checkCauseOfDeath(carkill, GetPedCauseOfDeath(GetPlayerPed(-1))) then
         TriggerEvent('esx_ambulancejob:revive')
         TriggerEvent('esx:showNotification', '~g~Vous avez été réanimé suite à une mort causé par un véhicule.')
     else
